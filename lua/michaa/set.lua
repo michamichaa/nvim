@@ -39,3 +39,8 @@ vim.opt.updatetime = 50
 
 vim.opt.colorcolumn = "120"
 
+-- Setting up default requirements
+vim.g.loaded_netrw = 1
+vim.g.loaded_netrwPlugin = 1
+
+require("nvim-tree").setup()
