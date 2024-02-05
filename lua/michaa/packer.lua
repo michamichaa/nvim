@@ -23,6 +23,12 @@ return require('packer').startup(function(use)
     use("onsails/lspkind.nvim")
     use('feline-nvim/feline.nvim')
     use('nvim-tree/nvim-web-devicons')
+    use('folke/noice.nvim')
+    use('folke/trouble.nvim')
+    -- use('lewis6991/gitsigns.nvim')
+    use('tpope/vim-fugitive')
+    use('muniftanjim/nui.nvim')
+    use('rcarriga/nvim-notify')
     use('christoomey/vim-tmux-navigator')
     use("szw/vim-maximizer")
     use("tpope/vim-surround")
@@ -42,10 +48,10 @@ return require('packer').startup(function(use)
           {'williamboman/mason-lspconfig.nvim'}, -- Optional
 
     -- Autocompletion
-    {'hrsh7th/nvim-cmp'},     -- Required
-    {'hrsh7th/cmp-nvim-lsp'}, -- Required
-    {'L3MON4D3/LuaSnip'},     -- Required
-    }
+          {'hrsh7th/nvim-cmp'},     -- Required
+          {'hrsh7th/cmp-nvim-lsp'}, -- Required
+          {'L3MON4D3/LuaSnip'},     -- Required
+        }
     }
     use('hrsh7th/nvim-cmp')
     use('hrsh7th/cmp-nvim-lsp')

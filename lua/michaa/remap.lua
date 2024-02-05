@@ -10,6 +10,12 @@ vim.keymap.set("n", "<leader>sx", ":close<CR>")
 vim.keymap.set("n", "<leader>sx", ":close<CR>")
 vim.keymap.set("n", "<leader>s", ":sp<CR>")
 vim.keymap.set("n", "<leader>d", ":vs<CR>")
+vim.keymap.set("n", "t", ":TroubleToggle<CR>")
+
+vim.keymap.set("n", "<leader>S", ":resize ")
+vim.keymap.set("n", "<leader>D", ":vertical resize")
+
+-- Note: Max Resize (240); Max Vertical Resize (64)
 
 
 vim.keymap.set("n", "<leader>sm", ":MaximizerToggle<CR>")
