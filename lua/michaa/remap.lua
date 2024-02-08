@@ -12,6 +12,9 @@ vim.keymap.set("n", "<leader>s", ":sp<CR>")
 vim.keymap.set("n", "<leader>d", ":vs<CR>")
 vim.keymap.set("n", "t", ":TroubleToggle<CR>")
 
+vim.keymap.set("n", "<leader>h", ":HopWord<CR>")
+vim.keymap.set("n", "<leader>H", ":HopPattern<CR>")
+
 vim.keymap.set("n", "<leader>S", ":resize ")
 vim.keymap.set("n", "<leader>D", ":vertical resize")
 

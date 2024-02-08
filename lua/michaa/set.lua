@@ -45,6 +45,7 @@ vim.g.loaded_netrwPlugin = 1
 
 require("nvim-tree").setup()
 
+
 require("noice").setup({
   lsp = {
     -- override markdown rendering so that **cmp** and other plugins use **Treesitter**
@@ -63,3 +64,12 @@ require("noice").setup({
     lsp_doc_border = false, -- add a border to hover docs and signature help
   },
 })
+
+require("notify").setup({
+    background_colour= "#4169E1"
+})
+require('gitsigns').setup()
+require('hop').setup()
+
+-- require('wlsample.bubble')
+

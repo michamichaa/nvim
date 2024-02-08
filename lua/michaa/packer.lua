@@ -17,15 +17,77 @@ return require('packer').startup(function(use)
 
     use('nvim-treesitter/nvim-treesitter', {run = ':TSUpdate'})
     use('nvim-treesitter/playground')
+    use {
+          'phaazon/hop.nvim',
+          branch = 'v2', -- optional but strongly recommended
+          config = function()
+            -- you can configure Hop the way you like here; see :h hop-config
+            require'hop'.setup { keys = 'etovxqpdygfblzhckisuran' }
+          end
+        }
     use('nvim-lua/plenary.nvim')
     use('theprimeagen/harpoon')
     use('jiangmiao/auto-pairs')
     use("onsails/lspkind.nvim")
     use('feline-nvim/feline.nvim')
+    use('romgrk/barbar.nvim')
+    use {
+      'nvimdev/dashboard-nvim',
+      event = 'VimEnter',
+     config = function()
+          require('dashboard').setup({
+                      theme = 'doom',
+                      -- shortcut_type= 'number',
+                      config = {
+                        header = {
+                [[                                    ]],
+                [[               ネオビム             ]],
+                [[                                    ]],
+                [[                                    ]],
+                [[ T ⡆⣐⢕⢕⢕⢕⢕⢕⢕⢕⠅⢗⢕⢕⢕⢕⢕⢕⢕⠕⠕⢕⢕⢕⢕⢕⢕⢕⢕⢕ 당]],
+                [[   ⢐⢕⢕⢕⢕⢕⣕⢕⢕⠕⠁⢕⢕⢕⢕⢕⢕⢕⢕⠅⡄⢕⢕⢕⢕⢕⢕⢕⢕⢕   ]],
+                [[ A ⢕⢕⢕⢕⢕⠅⢗⢕⠕⣠⠄⣗⢕⢕⠕⢕⢕⢕⠕⢠⣿⠐⢕⢕⢕⠑⢕⢕⠵⢕ 신]],
+                [[   ⢕⢕⢕⢕⠁⢜⠕⢁⣴⣿⡇⢓⢕⢵⢐⢕⢕⠕⢁⣾⢿⣧⠑⢕⢕⠄⢑⢕⠅⢕   ]],
+                [[ M ⢕⢕⠵⢁⠔⢁⣤⣤⣶⣶⣶⡐⣕⢽⠐⢕⠕⣡⣾⣶⣶⣶⣤⡁⢓⢕⠄⢑⢅⢑ 은]],
+                [[   ⠍⣧⠄⣶⣾⣿⣿⣿⣿⣿⣿⣷⣔⢕⢄⢡⣾⣿⣿⣿⣿⣿⣿⣿⣦⡑⢕⢤⠱⢐   ]],
+                [[ A ⢠⢕⠅⣾⣿⠋⢿⣿⣿⣿⠉⣿⣿⣷⣦⣶⣽⣿⣿⠈⣿⣿⣿⣿⠏⢹⣷⣷⡅⢐   ]],
+                [[   ⣔⢕⢥⢻⣿⡀⠈⠛⠛⠁⢠⣿⣿⣿⣿⣿⣿⣿⣿⡀⠈⠛⠛⠁⠄⣼⣿⣿⡇⢔ 게]],
+                [[ D ⢕⢕⢽⢸⢟⢟⢖⢖⢤⣶⡟⢻⣿⡿⠻⣿⣿⡟⢀⣿⣦⢤⢤⢔⢞⢿⢿⣿⠁⢕   ]],
+                [[   ⢕⢕⠅⣐⢕⢕⢕⢕⢕⣿⣿⡄⠛⢀⣦⠈⠛⢁⣼⣿⢗⢕⢕⢕⢕⢕⢕⡏⣘⢕ 으]],
+                [[   ⢕⢕⠅⢓⣕⣕⣕⣕⣵⣿⣿⣿⣾⣿⣿⣿⣿⣿⣿⣿⣷⣕⢕⢕⢕⢕⡵⢀⢕⢕   ]],
+                [[ M ⢑⢕⠃⡈⢿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⢃⢕⢕⢕ 르]],
+                [[   ⣆⢕⠄⢱⣄⠛⢿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⠿⢁⢕⢕⠕⢁   ]],
+                [[ O ⣿⣦⡀⣿⣿⣷⣶⣬⣍⣛⣛⣛⡛⠿⠿⠿⠛⠛⢛⣛⣉⣭⣤⣂⢜⠕⢑⣡⣴⣿ 다]],
+                [[                                    ]],
+                [[                                    ]],
+                [[                                    ]],
+                [[         I USE NEOVIM BTW...        ]],
+                [[                                    ]],
+                [[                                    ]],
+                [[                                    ]]}, --your header
+
+                        footer = {"I'm gonna GPT the shit out of this -- RSI People"},
+                        center =  {
+                            {
+                                icon = ' ',
+                                icon_hl = 'Title',
+                                desc = 'Find My Junk   b',
+                                desc_hl = 'String',
+                                key = 'b',
+                                -- key_format = ' %s', -- remove default surrounding `[]`
+                                action = 'Telescope find_files'
+                            },
+                        },
+                      }
+                    })
+      end,
+      requires = {'nvim-tree/nvim-web-devicons'}
+    }
+    -- use("windwp/windline.nvim")
     use('nvim-tree/nvim-web-devicons')
     use('folke/noice.nvim')
     use('folke/trouble.nvim')
-    -- use('lewis6991/gitsigns.nvim')
+    use('lewis6991/gitsigns.nvim')
     use('tpope/vim-fugitive')
     use('muniftanjim/nui.nvim')
     use('rcarriga/nvim-notify')
